@@ -1,0 +1,27 @@
+.town-name {
+    font-size: x-large;
+    font-weight: bolder;
+}
+.weather-section {
+    display: flex;
+}
+
+.unit-indicator {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 10px;
+}
+
+.unit-btns {
+    margin: 0;
+    background-color: transparent;
+    color: white;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.active-unit-btn {
+    background-color: #ea4f54;
+    border-radius: 15px;
+}

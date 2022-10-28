@@ -1,23 +1,21 @@
-import logo from './logo.svg';
 import './App.css';
+import { useState } from 'react';
+import AboutMe from './components/AboutMe';
+import MyTown from './components/MyTown';
 
 function App() {
+
+  const [currentView, setCurrentView] = useState('aboutMe');
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <div className="app-menu">
+        <button className='menu-item' style={{backgroundColor: `${currentView === 'aboutMe' ? '#ea4f54' : 'transparent'}`}} onClick={() => setCurrentView('aboutMe')} >About Me</button>
+        <button className='menu-item'  style={{backgroundColor: `${currentView !== 'aboutMe' ? '#ea4f54' : 'transparent'}`}} onClick={() => setCurrentView('myTown')} >My Town</button>
+      </div>
+      <div className='app-navigator'>
+        {currentView === 'aboutMe' ? <AboutMe /> : <MyTown />}
+      </div>
     </div>
   );
 }
