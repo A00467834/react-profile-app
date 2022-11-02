@@ -1,4 +1,7 @@
 import React, { useEffect, useState } from 'react';
+import mild from "../assets/mild.png";
+import cold from "../assets/cold.png";
+import sunny from "../assets/sunny.png";
 
 import './MyTown.css';
 
@@ -29,7 +32,7 @@ const MyTown = () => {
                 temp
             });
         }
-    } 
+    }
 
     return (
         <div>
@@ -42,6 +45,11 @@ const MyTown = () => {
                     <button className={`unit-btns ${tempData.cel ? 'active-unit-btn' : ''}`} disabled={tempData.cel} onClick={convertTemp}>C</button>
                     <button className={`unit-btns ${tempData.cel ? '' : 'active-unit-btn'}`} disabled={!tempData.cel} onClick={convertTemp}>F</button>
                 </div>
+            <img src={
+                tempData.cel ? 
+                (tempData.temp < 11 ? cold : (tempData.temp < 21 ? mild : sunny)) : 
+                (tempData.temp < 52 ? cold : (tempData.temp < 70 ? mild : sunny))
+            } height={50} width={50} /> 
            </div>
         </div>
     )

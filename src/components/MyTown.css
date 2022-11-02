@@ -4,6 +4,9 @@
 }
 .weather-section {
     display: flex;
+    align-items: center;
+    gap: 10px;
+    height: 100%;
 }
 
 .unit-indicator {
@@ -24,4 +27,9 @@
 .active-unit-btn {
     background-color: #ea4f54;
     border-radius: 15px;
+}
+
+.weather-img {
+    height: 50px;
+    width: 50px;
 }
